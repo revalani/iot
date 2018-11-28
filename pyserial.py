@@ -1,5 +1,6 @@
-import serial # if you have not already done so
-ser = serial.Serial('/dev/tty.usbserial', 9600) # alterar porta e permicoes 
-ser.write(b'5')
+import serial 
+import JSON
 
-
+ser = serial.Serial('/dev/ttyUSB0', 9600)
+while True:
+    print(ser.readline().decode('utf-8')
