@@ -1,23 +1,36 @@
 #define THERMISTORPIN A0        // which analog pin to connect
 #define THERMISTORNOMINAL 10000 // resistance at 25 degrees C
 #define TEMPERATURENOMINAL 25   // temp. for nominal resistance (almost always 25 C)
-
 // how many samples to take and average, more takes longer
 #define NUMSAMPLES 5 // but is more 'smooth'
 #define BCOEFFICIENT 3950     // The beta coefficient of the thermistor (usually 3000-4000)
 #define SERIESRESISTOR 10000  // the value of the 'other' resistor
-
 int samples[NUMSAMPLES];
+
+
+//int ledPin = 13;
+
+void resposta(int time){
+////  int i = time 
+////  for(int i =0; i<time;i++){
+//    digitalWrite(ledPin HIGH);
+//    delay(time);
+//    digitalWrite(ledPin, LOW);
+//    delay(time);  
+////  }
+   Serial.print("ola");
+   Serial.println(time);
+}
+
 
 void setup(void) {
   Serial.begin(9600);
+//  pinMode(ledPin, OUTPUT);
 }
  
 void loop(void) {
   uint8_t i;
   float average;
-
-
   // take N samples in a row, with a slight delay
   for (i=0; i< NUMSAMPLES; i++) {
    samples[i] = analogRead(THERMISTORPIN);
@@ -47,7 +60,8 @@ void loop(void) {
  
   Serial.print("Temperature "); 
   Serial.print(steinhart);
-  Serial.println(" *C");
- 
+  Serial.print(" *C");
+
+  resposta(100);
   delay(1000);
 }

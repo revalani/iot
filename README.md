@@ -9,11 +9,6 @@ http://api.openweathermap.org
 
 
 
-leirura do LDR na A0
-leitura do Termometro na A1
-
-
-
 
 json com previsao do tempo 
 http://api.openweathermap.org/data/2.5/weather?id=3451190&appid=79eccc6a51de31f8d81332dbc05448cd
@@ -24,3 +19,8 @@ appid=79eccc6a51de31f8d81332dbc05448cd
       79eccc6a51de31f8d81332dbc05448cd => loging de acesso
 temp em kelvin tag: main.temp
 referencia https://openweathermap.org/current
+
+
+ativar porta para o arduino (https://forum.arduino.cc/index.php?topic=495039.0)
+    sudo chmod a+rw /dev/tty'porta'
+
