@@ -1,20 +1,29 @@
-# from time import *
 import serial
-# import urllib2
-# from datetime import datetime
+import json
+import datetime
+import urllib.request
 
-# previsao = urllib2.urlopen('http://api.openweathermap.org/data/2.5/weather?id=3451190&appid=79eccc6a51de31f8d81332dbc05448cd')
+with urllib.request.urlopen(link) as response:
+   json = json.loads(response.read().decode('utf-8'))
+# parametros da API em https://openweathermap.org/current#JSON 
+temp = json['main']['temp']
 
+# time = datetime.datetime.now() 
+time = datetime.datetime(2018,3,15,7,0,0)
+time = datetime.datetime.strftime(time,"%H:%M:%S %d/%m/%Y")# hr,min,sec,day,month,yr
+
+agenda = json.loads(open("agenda.json","r").read())
+
+tempo = {"time":time}
+temp  = {"temp":temp}
+agenda.update(tempo)
+agenda.update(temp)
+
+print (agenda)
+
+# receber do arduino
+# lista={}
 
 ser = serial.Serial('/dev/ttyUSB0', 9600) # Establish the connection on a specific port
-# time = datetime.now() # Below 32 everything in ASCII is gibberish
-
-lista={}
-a=5
-while a!=0:
-	print (ser.readline().decode('utf-8')) # Convert the decimal number to ASCII then send it to the Arduino
-	# a-=1
-	# print (str(time), ser.readline().decode('utf-8')) 
-	# lista.apped(time=str(time),temp=ser.readline().decode('utf-8'))#, "temp":ser.readline().decode('utf-8'))
-
-# print previsao
+while True:
+	print (ser.readline().decode('utf-8')) # Convert the decimal number to ASCII then send it to the ArduinoJson.h

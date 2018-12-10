@@ -6,21 +6,15 @@ referencias:
 
 https://learn.adafruit.com/thermistor/using-a-thermistor
 http://api.openweathermap.org
-
-
-
-
 json com previsao do tempo 
 http://api.openweathermap.org/data/2.5/weather?id=3451190&appid=79eccc6a51de31f8d81332dbc05448cd
 
-weather?id=3451190 => codigo referente a cidade do rio
+https://arduinojson.org/v6/example/generator/
 
-appid=79eccc6a51de31f8d81332dbc05448cd
-      79eccc6a51de31f8d81332dbc05448cd => loging de acesso
-temp em kelvin tag: main.temp
-referencia https://openweathermap.org/current
 
 
 ativar porta para o arduino (https://forum.arduino.cc/index.php?topic=495039.0)
     sudo chmod a+rw /dev/tty'porta'
+http://api.openweathermap.org
+https://playground.arduino.cc/code/time
 
